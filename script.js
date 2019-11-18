@@ -25,9 +25,9 @@ function getBandElem(band){
     bandName.innerHTML = band.id + ": " + band.name;
 
     let bandP = document.createElement("p");
-    bandP.innerHTML = `was founded in ${band.date}, genre ${band.genre}`;
+    bandP.innerHTML = `was founded in ${band.date}, genre ${band.genre}, band is ${band.active}`;
 
-    bandDiv.append(bandTitle);
+    bandDiv.append(bandName);
     bandDiv.append(bandP);
     
     return bandDiv;
@@ -38,10 +38,11 @@ async function addBand(){
     const bandName = document.getElementById("txt-new-band-name").value;
     const bandDate = document.getElementById("txt-new-band-date").value;
     const bandGenre = document.getElementById("txt-new-band-genre").value;
+    const bandActive = document.getElementById("txt-new-band-active").value;
 
-    console.log(`you are adding ${bandName}, ${bandDate}, ${bandGenre}`);
+    console.log(`you are adding ${bandName}, ${bandDate}, ${bandGenre}, ${bandActive}`);
 
-    let band = {"name": bandName, "date":bandDate, "genre":bandGenre};
+    let band = {"name": bandName, "date":bandDate, "genre":bandGenre, "active":bandActive};
 
     let response = await fetch('/api/bands/', {
         method: 'POST',
@@ -51,7 +52,7 @@ async function addBand(){
         body: JSON.stringify(band),
     });
 
-    if(respose != 200){
+    if(respose.status != 200){
         console.log("Error adding band");
         return;
     }

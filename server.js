@@ -8,12 +8,12 @@ app.use(express.json());
 app.use(express.static('public'));
 
 const bands = [
-    {id:1, name:"Green Day", date:"1986", genre:"Pop Punk"},
-    {id:2, name:"Iron Maiden", date:"1975", genre:"Heavy Metal"},
-    {id:3, name:"Nirvana", date:"1987", genre:"Grunge"},
-    {id:4, name:"Metallica", date:"1981", genre:"Thrash Metal"},
-    {id:5, name:"Modest Mouse", date:"1992", genre:"Indie"},
-    {is:6, name:"Kero Kero Bonito", date:"2011", genre:"Indie Pop"}
+    {id:1, name:"Green Day", date:"1986", genre:"Pop Punk", active:"Yes"},
+    {id:2, name:"Iron Maiden", date:"1975", genre:"Heavy Metal", active:"Yes"},
+    {id:3, name:"Nirvana", date:"1987", genre:"Grunge", active:"No"},
+    {id:4, name:"Metallica", date:"1981", genre:"Thrash Metal", active:"Yes"},
+    {id:5, name:"Modest Mouse", date:"1992", genre:"Indie", active:"Yes"},
+    {is:6, name:"Kero Kero Bonito", date:"2011", genre:"Indie Pop", active:"Yes"}
 ]
 
 app.get('/api/bands', (req,res)=>{
@@ -41,7 +41,8 @@ app.post('/api/bands', (req,res)=>{
     const schema = {
         name:Joi.string().min(3).required(),
         date:Joi.string().min(4).required(),
-        genre:Joi.string().required()
+        genre:Joi.string().required(),
+        active:Joi.string().required()
     }
 
     const result = Joi.validate(req.body, schema);
@@ -54,7 +55,8 @@ app.post('/api/bands', (req,res)=>{
         id:songs.length + 1,
         name : req.body.name,
         date : req.body.date,
-        genre : req.body.genre
+        genre : req.body.genre,
+        active : req.body.active
     }
 
     console.log("name is: " + req.body.name);
