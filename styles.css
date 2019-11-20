@@ -12,6 +12,14 @@ h1 {
     text-align: center;
 }
 
+button {
+    color: black;
+}
+
+input {
+    color: black;
+}
+
 #container {
     background-color: #510006;
     margin: auto;

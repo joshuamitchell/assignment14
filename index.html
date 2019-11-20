@@ -11,6 +11,7 @@
             <h2><a href="https://github.com/joshuamitchell/assignment14"></a></h2>
             <div id="bands"></div>
 
+            <!-- Show a Band -->
             <div class="band-form">
                 <h3>Show a Band:</h3>
                 <p>
@@ -21,60 +22,51 @@
                 <div id="band"></div>
             </div>
 
+            <!-- Add a Band -->
             <div class="band-form">
                 <h3>Create a Band</h3>
                 <p>
-                    <label for="new-band-name">Band Name:</label>
+                    <label for="txt-new-band-name">Band Name:</label>
                     <input id="txt-new-band-name">
                 </p>
                 <p>
-                    <label for="new-band-date">Date Founded:</label>
+                    <label for="txt-new-band-date">Date Founded:</label>
                     <input id="txt-new-band-date">
                 </p>
                 <p>
-                    <label for="new-band-genre">Genre:</label>
+                    <label for="txt-new-band-genre">Genre:</label>
                     <input id="txt-new-band-genre">
                 </p>
                 <p>
-                    <label for="new-band-active">Is the Band Active?</label>
+                    <label for="txt-new-band-active">Is the Band Active?</label>
                     <input id="txt-new-band-active">
                 </p>
                 <button id="btn-add-band">Add Band</button>
             </div>
 
-            <div class="band-form">
-                    <h3>Edit a Band</h3>
-                    <p>
-                        <label for="band-id">Please Enter Band Id:</label>
-                        <input id="txt-band-id">
-                    </p>
-                    <p>
-                        <label for="changed-band-name">Band Name:</label>
-                        <input id="txt-changed-band-name">
-                    </p>
-                    <p>
-                        <label for="changed-band-date">Date Founded:</label>
-                        <input id="txt-changed-band-date">
-                    </p>
-                    <p>
-                        <label for="changed-band-genre">Genre:</label>
-                        <input id="txt-changed-band-genre">
-                    </p>
-                    <p>
-                        <label for="changed-band-active">Is the Band Active?</label>
-                        <input id="txt-changed-band-active">
-                    </p>
-                    <button id="btn-edit-band">Add Band</button>
-                </div>
-
-            <div class="band-form">
-                <h3>Delete a Band:</h3>
+            <!-- Edit a Band -->
+            <div id="edit-band-form" class="band-form">
+                <h3>Edit a Band</h3>
                 <p>
-                    <label for="band-id">Band Id:</label>
-                    <input id="txt-band-id">
+                    Band Id:<span id="edit-band-id"></span>
                 </p>
-                <button id="btn-delete-band">Delete Band</button>
-                <div id="band"></div>
+                <p>
+                    <label for="edit-band-name">Band Name:</label>
+                    <input id="txt-edit-band-name">
+                </p>
+                <p>
+                    <label for="edit-band-date">Date Founded:</label>
+                    <input id="txt-edit-band-date">
+                </p>
+                <p>
+                    <label for="edit-band-genre">Genre:</label>
+                    <input id="txt-edit-band-genre">
+                </p>
+                <p>
+                    <label for="edit-band-active">Is the Band Active?</label>
+                    <input id="txt-edit-band-active">
+                </p>
+                <button id="btn-edit-band">Edit Band</button>
             </div>
         </div>
     </body>
